@@ -46,7 +46,7 @@ export const projects = [
     description: "A five-question programming quiz that checks each answer, advances through the questions, and calculates a final score.",
     technologies: ["HTML", "CSS", "JavaScript"],
     links: [{label:"View repository",url:"https://github.com/manan2128/Queez"}],
-    live: null,
+    live: "https://manan-quiz.vercel.app",
     detail: "Questions and answer choices are stored in a JavaScript array. Clicking an answer checks correctness, updates the score, and advances to the next question. The final screen displays the score. This existing shared project retains its original author credit.",
     provenance: "Existing shared coursework; the original author is credited in the README."
   },
@@ -56,7 +56,7 @@ export const projects = [
     description: "A personal bookshelf for adding titles, changing reading status, and filtering books as a reading list grows.",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     links: [{label:"View repository",url:"https://github.com/manan2128/ReadingBook_app"}],
-    live: null,
+    live: "https://manan-reading-list.vercel.app",
     detail: "React state manages book records. Books are saved in browser localStorage under reading-list-books. Each book has an ID, title, and status: want, reading, or finished. Users can add, remove, filter, and cycle status. Duplicate titles are rejected. Data stays in that browser and does not sync between devices.",
     provenance: "Existing shared coursework; the source repository retains its history."
   }

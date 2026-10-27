@@ -6,7 +6,9 @@ A responsive personal portfolio for Manan Agarwal, a second-year BTech Computer 
 
 - GitHub: https://github.com/manan2128/manan-portfolio
 - Contact: agarwal21manan@gmail.com
-- Production URL: added after the first verified Vercel deployment.
+- Portfolio: https://manan-portfolio-psi-two.vercel.app
+- Quiz: https://manan-quiz.vercel.app
+- Reading list: https://manan-reading-list.vercel.app
 
 ## Features
 
@@ -27,11 +29,12 @@ HTML, CSS, browser JavaScript modules, Node.js, Git, GitHub, and Vercel Function
 
 ## Run locally
 
-Install Node.js 22 or newer. No packages need to be installed.
+Install Node.js 22 or newer. The only direct runtime dependency is Vercel's official OIDC authentication helper, used on the server.
 
 ```sh
 git clone https://github.com/manan2128/manan-portfolio.git
 cd manan-portfolio
+npm install
 npm run dev
 ```
 
@@ -46,7 +49,7 @@ The build copies only `public/` into `dist/`; the Vercel Function is in `api/cha
 
 ## AI setup
 
-On Vercel, the endpoint uses the deployment's `VERCEL_OIDC_TOKEN` to authenticate to Vercel AI Gateway. Gateway account verification/credits must be available. OIDC is authentication, not a guarantee of free or enabled AI access.
+On Vercel, the endpoint uses `getVercelOidcToken()` from `@vercel/oidc` to read the deployment's current token from its request context or environment and authenticate to Vercel AI Gateway. Gateway account verification/credits must be available. OIDC is authentication, not a guarantee of free or enabled AI access.
 
 For local AI calls, put a key in an ignored `.env.local` file. Copy the variable names from `.env.example`; do not copy old keys from another project. Choose one option:
 

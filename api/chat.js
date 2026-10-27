@@ -1,4 +1,5 @@
 import { profile, projects } from "../public/projects.js";
+import { getVercelOidcToken } from "@vercel/oidc";
 
 export const systemPrompt = [
   "You are the assistant for Manan Agarwal's portfolio. Answer in a friendly, concise style, usually under 100 words.",
@@ -33,7 +34,8 @@ export default async function handler(req, res) {
   const invalid = validatePayload(body);
   if (invalid) return res.status(400).json({error:invalid});
   const groq = Boolean(process.env.GROQ_API_KEY);
-  const key = groq ? process.env.GROQ_API_KEY : process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
+  let key = groq ? process.env.GROQ_API_KEY : process.env.AI_GATEWAY_API_KEY;
+  if (!key) { try { key = await getVercelOidcToken(); } catch { /* Local development can have no OIDC context. */ } }
   if (!key) return res.status(503).json({error:"The AI service has not been connected yet. Please contact Manan by email or explore the project links."});
   const endpoint = groq ? "https://api.groq.com/openai/v1/chat/completions" : "https://ai-gateway.vercel.sh/v1/chat/completions";
   const model = groq ? process.env.GROQ_MODEL || "openai/gpt-oss-20b" : process.env.AI_GATEWAY_MODEL || "google/gemini-2.5-flash-lite";
