@@ -44,7 +44,7 @@ Factorial: a running product starts at 1 and multiplies successive integers. 5! 
 
 Fibonacci: each new number is the sum of the previous two. The first ten terms starting at zero are 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.
 
-Dictionary: the linked script represents a sample student's name, roll number, and marks using key/value pairs. Its current implementation creates a dictionary directly. If your teacher expects actual conversion from another structure, that is a remaining coursework requirement.
+Dictionary: Student is a dataclass containing name, roll, and marks. student_to_dict uses dataclasses.asdict to convert the structured record into a separate dictionary. Two tests check the converted fields and confirm that changing the resulting dictionary leaves the record unchanged. Sample grades are fictional.
 
 ### Messy Python Code Improvement
 
@@ -81,4 +81,5 @@ React state stores book objects. localStorage persists those objects in the same
 ## What was deliberately avoided
 
 No invented awards, years of professional experience, fabricated testimonials, fake test results, copied secret keys, or rewritten contributor history were added.
+
 

@@ -19,7 +19,7 @@ export const projects = [
       {label:"Fibonacci",url:"https://github.com/manan2128/python-basics-fibonacci"},
       {label:"Dictionary",url:"https://github.com/manan2128/python-basics-struct-to-dict"}
     ],
-    detail: "The factorial example multiplies integers from 1 through 5 to produce 120. The Fibonacci exercise generates ten terms iteratively. The dictionary exercise stores and displays a sample student's name, roll number, and marks. The current dictionary code constructs a dictionary directly; it does not implement a general struct converter.",
+    detail: "The factorial example multiplies integers from 1 through 5 to produce 120. The Fibonacci exercise generates ten terms iteratively. The dictionary exercise converts a Student dataclass into a separate dictionary using dataclasses.asdict, then displays its fields. Two unit tests check field conversion and independence from the original record.",
     provenance: "Existing coursework repositories; original commit history is preserved."
   },
   {
@@ -68,4 +68,5 @@ export function filterProjects(items, query = "", category = "All") {
     return (category === "All" || project.category === category) && terms.every(term => text.includes(term));
   });
 }
+
 
