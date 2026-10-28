@@ -89,3 +89,9 @@ The dictionary repository currently constructs a Python dictionary directly. It 
 
 Chat history exists in the current page's memory and clears when reloaded or cleared. Submitted messages are sent to the configured AI provider to generate a response. The application does not store them in a database or intentionally log them. This is a small coursework deployment, not a production chat service with durable rate limiting; use provider spending limits and Vercel traffic protection if sharing widely.
 
+
+## Live weather section
+
+The Weather section searches Open-Meteo's geocoding API for a city and shows matching locations with region/country labels. It requests current temperature, apparent temperature, humidity, weather code and wind speed from Open-Meteo's forecast API. Weather codes become readable conditions. Values use Celsius, percent and km/h; the timestamp is local to the selected city. These are model-based current conditions, refreshed on each search, not a continuously updating station feed.
+
+Browser requests need no API key for this non-commercial portfolio. CSP allows only the two specific API origins in addition to the portfolio. Both services are credited in the section. Searches handle no results, timeouts, offline errors and provider failures; previous requests are cancelled so a slow response cannot replace a newer search.

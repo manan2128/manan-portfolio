@@ -83,3 +83,9 @@ React state stores book objects. localStorage persists those objects in the same
 No invented awards, years of professional experience, fabricated testimonials, fake test results, copied secret keys, or rewritten contributor history were added.
 
 
+
+## Live weather section
+
+The Weather section searches Open-Meteo's geocoding API for a city and shows matching locations with region/country labels. It requests current temperature, apparent temperature, humidity, weather code and wind speed from Open-Meteo's forecast API. Weather codes become readable conditions. Values use Celsius, percent and km/h; the timestamp is local to the selected city. These are model-based current conditions, refreshed on each search, not a continuously updating station feed.
+
+Browser requests need no API key for this non-commercial portfolio. CSP allows only the two specific API origins in addition to the portfolio. Both services are credited in the section. Searches handle no results, timeouts, offline errors and provider failures; previous requests are cancelled so a slow response cannot replace a newer search.

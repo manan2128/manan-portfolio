@@ -11,12 +11,13 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script src="/theme.js"></script><link rel="stylesheet" href="/styles.css">
 <script type="module" src="/app.js"></script>
+<script type="module" src="/weather.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="header"><div class="container header-inner">
 <a class="wordmark" href="#home" aria-label="Manan Agarwal, home"><span class="logo">m<span>.</span></span><span>manan agarwal</span></a>
-<nav aria-label="Main navigation"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
+<nav aria-label="Main navigation"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#weather">Weather</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
 <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode"><span id="theme-symbol" aria-hidden="true">◐</span><span id="theme-label">Dark mode</span></button>
 </div></header>
 <main id="main">
@@ -51,8 +52,21 @@
 <p class="project-footnote">These coursework repositories include shared starting material. Their original credits and contributor history remain available in the source.</p>
 <noscript><p>Enable JavaScript to search projects. You can also <a href="https://github.com/manan2128?tab=repositories">browse all repositories on GitHub</a>.</p></noscript>
 </section>
-<section class="assistant-section container" id="assistant" aria-labelledby="assistant-title"><div class="assistant-copy"><p class="eyebrow">04 / MEET THE PORTFOLIO ASSISTANT</p><h2 id="assistant-title">A question?<br><span class="serif">Just ask.</span></h2><p>Explore my education, coursework, and the ideas behind each project through a conversation.</p><button class="button primary" type="button" data-open-chat>Ask about my work <span aria-hidden="true">↗</span></button></div><div class="sample-chat"><div class="sample-header"><span class="assistant-avatar" aria-hidden="true">m.</span><strong>A few conversation starters</strong></div><button type="button" data-question="What is Manan studying?">What is Manan studying? <span aria-hidden="true">↗</span></button><button type="button" data-question="Explain the Python programs.">Explain the Python programs. <span aria-hidden="true">↗</span></button><button type="button" data-question="How does the book reading list work?">How does the reading list work? <span aria-hidden="true">↗</span></button><p>AI answers use the information in this portfolio.<br>Please verify important details with the linked source.</p></div></section>
-<section class="section container contact" id="contact" aria-labelledby="contact-title"><p class="eyebrow section-label">05 / SAY HELLO</p><div class="contact-row"><h2 id="contact-title">Let's start a<br><span class="serif blue">conversation.</span></h2><div><p>Have a project idea, a question,<br>or something I should explore?</p><a class="email-link" href="mailto:agarwal21manan@gmail.com">agarwal21manan@gmail.com <span aria-hidden="true">↗</span></a><div class="contact-actions"><button type="button" id="copy-email" class="text-link">Copy email</button><a class="text-link" href="https://github.com/manan2128" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a></div><p class="copy-status" id="copy-status" role="status"></p></div></div></section>
+<section class="section container weather-section" id="weather" aria-labelledby="weather-title">
+<div class="section-heading"><div><p class="eyebrow section-label">04 / LIVE WEATHER</p><h2 id="weather-title">A city.<br><span class="serif">A little outlook.</span></h2></div><p>Search a city to check its current conditions.<br>A small web project, right here in my portfolio.</p></div>
+<div class="weather-panel">
+<form id="weather-form"><label for="weather-city">City name</label><div class="weather-search"><input id="weather-city" type="search" placeholder="Try Jaipur, London or Mumbai" required minlength="2" maxlength="100" autocomplete="off"><button class="button primary" type="submit">Check weather ↗</button></div></form>
+<p id="weather-status" role="status" aria-live="polite">Enter a city to get started.</p>
+<div id="weather-choices" class="weather-choices" role="group" aria-label="Matching locations"></div>
+<div id="weather-result" hidden>
+<div class="weather-overview"><div><p class="eyebrow">CURRENT CONDITIONS</p><h3 id="weather-location"></h3><p id="weather-condition"></p></div><strong id="weather-temperature"></strong></div>
+<dl class="weather-metrics"><div><dt>Feels like</dt><dd id="weather-feels"></dd></div><div><dt>Humidity</dt><dd id="weather-humidity"></dd></div><div><dt>Wind speed</dt><dd id="weather-wind"></dd></div></dl>
+<p id="weather-time"></p>
+</div>
+<p class="weather-credit">Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a> · Locations by <a href="https://www.geonames.org/" target="_blank" rel="noopener noreferrer">GeoNames</a>. Retrieved when you search; search again to refresh.</p>
+</div></section>
+<section class="assistant-section container" id="assistant" aria-labelledby="assistant-title"><div class="assistant-copy"><p class="eyebrow">05 / MEET THE PORTFOLIO ASSISTANT</p><h2 id="assistant-title">A question?<br><span class="serif">Just ask.</span></h2><p>Explore my education, coursework, and the ideas behind each project through a conversation.</p><button class="button primary" type="button" data-open-chat>Ask about my work <span aria-hidden="true">↗</span></button></div><div class="sample-chat"><div class="sample-header"><span class="assistant-avatar" aria-hidden="true">m.</span><strong>A few conversation starters</strong></div><button type="button" data-question="What is Manan studying?">What is Manan studying? <span aria-hidden="true">↗</span></button><button type="button" data-question="Explain the Python programs.">Explain the Python programs. <span aria-hidden="true">↗</span></button><button type="button" data-question="How does the book reading list work?">How does the reading list work? <span aria-hidden="true">↗</span></button><p>AI answers use the information in this portfolio.<br>Please verify important details with the linked source.</p></div></section>
+<section class="section container contact" id="contact" aria-labelledby="contact-title"><p class="eyebrow section-label">06 / SAY HELLO</p><div class="contact-row"><h2 id="contact-title">Let's start a<br><span class="serif blue">conversation.</span></h2><div><p>Have a project idea, a question,<br>or something I should explore?</p><a class="email-link" href="mailto:agarwal21manan@gmail.com">agarwal21manan@gmail.com <span aria-hidden="true">↗</span></a><div class="contact-actions"><button type="button" id="copy-email" class="text-link">Copy email</button><a class="text-link" href="https://github.com/manan2128" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a></div><p class="copy-status" id="copy-status" role="status"></p></div></div></section>
 </main>
 <footer class="container footer"><span>© 2026 Manan Agarwal</span><span>Made with curiosity &amp; code.</span><a href="#home">Back to top ↑</a></footer>
 <button class="chat-launcher" id="chat-launcher" type="button" aria-label="Open portfolio assistant" aria-haspopup="dialog"><span aria-hidden="true">✳</span> Ask Manan's AI</button>
