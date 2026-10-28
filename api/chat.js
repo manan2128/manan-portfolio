@@ -48,6 +48,9 @@ export default async function handler(req, res) {
     if (!response.ok) {
       // Log only a status; credentials and visitor messages are never logged.
       console.warn("Portfolio AI provider status:", response.status);
+      const failure = await response.json().catch(() => ({}));
+      const failureCode = failure.error?.code || failure.error?.type;
+      if (typeof failureCode === "string" && /^[a-zA-Z0-9_-]{1,100}$/.test(failureCode)) console.warn("Portfolio AI provider code:", failureCode);
       if (response.status === 429) return res.status(429).json({error:"The AI service is busy. Please wait a moment and try again."});
       if ([401,402,403].includes(response.status)) return res.status(503).json({error:"The AI service needs account configuration. Please use the project links or contact Manan by email."});
       return res.status(502).json({error:"The AI service could not answer right now. Please try again shortly."});
